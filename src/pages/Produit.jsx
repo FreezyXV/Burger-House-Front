@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import "../assets/produit.css";
-import { getItemById } from "../../../Back/src/api/functions";
 
 // Ce composant permet d'afficher le Produit concerné et de l'envoyer vers le Panier
 function Produit({ addToCart }) {
@@ -38,6 +37,27 @@ function Produit({ addToCart }) {
       setIsLoading(false);
     }
   }, [productId]);
+
+  
+  async function getItemById(type, id) {
+    var response = null;
+  
+    if (type === "Menu") {
+      response = await fetch(`http://localhost:2233/api/menus/${id}`);
+    } else {
+      response = await fetch(`http://localhost:2233/api/products/${id}`);
+    }
+  
+    if (!response.ok) {
+      if (response.status === 404) {
+        return null;
+      }
+  
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+  
+    return response.json();
+  }
 
   // Fonction qui permet d'ajouter ou d'enlever la quantité du produit concerné
   const handleQuantityChange = (changeType) => {
