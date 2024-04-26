@@ -1,0 +1,46 @@
+.success-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #faf5ed;
+  }
+  
+  .success-content {
+    text-align: center;
+    padding: 40px;
+    border-radius: 10px;
+    background: white;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+  
+  .success-content h1 {
+    font-family: "Bungee Inline", sans-serif;
+    color: #4CAF50;
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+  
+  .success-content p {
+    font-family: "Bungee Inline", sans-serif;
+    color: #555;
+    font-size: 1.2em;
+    margin-bottom: 30px;
+  }
+  
+  .close-btn {
+    font-family: "Bungee Inline", sans-serif;
+    padding: 10px 20px;
+    font-size: 1em;
+    color: white;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .close-btn:hover {
+    background-color: #45a049;
+  }
+  

@@ -1,0 +1,696 @@
+@import url("https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Montserrat:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bungee&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bungee+Inline&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Bungee Spice", Arial, Helvetica, sans-serif;
+  font-family: "Bungee Spice", Arial, Helvetica, sans-serif;
+}
+
+a {
+  font-family: "Bungee Spice", Arial, Helvetica, sans-serif;
+}
+
+.aMaCommande {
+  display: flex;
+  font-family: "Bungee Inline", Arial, Helvetica, sans-serif;
+  color: #fff;
+  align-items: center;
+  text-decoration: none;
+  margin-top: -2px;
+}
+
+.MaCommande {
+  display: flex;
+  position: relative;
+  font-family: "Bungee Inline", Arial, Helvetica, sans-serif;
+  color: #fff;
+  align-items: center;
+  text-decoration: none;
+  margin-bottom: -3px;
+}
+
+p {
+  font-family: "Bungee Spice", Arial, Helvetica, sans-serif;
+  text-align: left;
+  padding-top: 20px;
+  padding: 10px;
+  color: brown;
+}
+
+p1 {
+  font-family: "Bungee Spice", Arial, Helvetica, sans-serif;
+  text-align: center;
+  padding: 10px;
+}
+
+p2 {
+  position: relative;
+  font-family: "Bungee Spice", Arial, Helvetica, sans-serif;
+  text-align: center;
+  bottom: -70px;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+h1 {
+  font-family: "Bungee Spice", Arial, Helvetica, sans-serif;
+  text-align: center;
+  color: darkred;
+}
+
+h2 {
+  font-family: "Bungee Inline", cursive;
+  text-align: center;
+  padding-top: 40px;
+  padding: 30px;
+  color: black;
+}
+h4 {
+  font-family: "Bungee Spice", Arial, Helvetica, sans-serif;
+  padding-bottom: 40px;
+  padding: 30px;
+}
+
+ul {
+  font-family: "Bungee Spice", Arial, Helvetica, sans-serif;
+  text-align: left;
+  color: rgb(79, 29, 29);
+}
+
+body {
+  background-color: #fffdf0;
+  position: relative;
+  display: block;
+  margin: 0;
+  justify-content: center;
+  align-items: center;
+}
+img {
+  max-width: 100%;
+  justify-content: space-between;
+}
+main {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-top: 30px;
+}
+
+main1 {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.leftside {
+  display: inline-block;
+  position: relative;
+  height: 150px;
+  width: 350px;
+  margin-left: -320px;
+  margin-top: 50px;
+  top: 300px;
+}
+
+.burgername {
+  position: relative;
+  display: block;
+  text-align: left;
+}
+.text-container,
+p {
+  position: relative;
+  text-align: center;
+  display: block;
+  word-break: break-all;
+}
+
+.center {
+  display: block;
+  position: relative;
+  margin-bottom: 30px;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+}
+.img-burger {
+  display: block;
+  margin-top: -60px;
+}
+
+.rightside {
+  display: inline-block;
+  position: absolute;
+  left: 470px;
+  bottom: 140px;
+}
+.purchase-grid {
+  display: block;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.purchase-info {
+  display: block;
+  text-align: center;
+  width: 300px;
+  height: 150px;
+  justify-content: center;
+}
+.basket-container {
+  display: block;
+  padding: 10px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  margin-top: 5px;
+  justify-content: center;
+}
+
+.basket-item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+
+.basket-item p {
+  margin: 0px;
+}
+
+.basket-item button {
+  font-family: "Bungee Inline", Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  padding: 0; 
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  width: 35px;
+  height: 35px;
+  font-size: 25px;
+  color: #fff;
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+}
+
+.basket-item .quantity {
+  display: flex;
+  align-items: center;
+}
+
+.basket-item .quantity button {
+  margin: 0 10px;
+}
+
+.total-price {
+  font-weight: bold;
+  font-family: "Bungee Inline", Arial, Helvetica, sans-serif;
+  color: rgb(79, 29, 29);
+  font-size: 22px;
+}
+
+.purchase-button {
+  font-family: "Bungee Inline", Arial, Helvetica, sans-serif;
+  position: relative;
+
+  padding: 0px 25px;
+  background-color: #ff9900;
+  color: #fff;
+  border: none;
+  border-radius: 15px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.ingrédients {
+  display: block;
+  position: relative;
+  justify-content: center;
+  bottom: 800px;
+}
+
+.bottompart {
+  justify-content: center;
+  height: 95%;
+  width: 95%;
+  margin-top: -130px;
+}
+
+.img-burger1 {
+  display: flex;
+  max-width: 100%;
+}
+
+.ingredients-left ul,
+.ingredients-right ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.ingredients-left ul {
+  text-align: left;
+  list-style: none;
+  padding: 0;
+  position: relative;
+  margin: 0 auto;
+  display: block;
+  right: 450px;
+  bottom: 600px;
+  width: 240px;
+  height: 300px;
+}
+
+.ingredients-left li {
+  margin-bottom: 50px;
+  border-bottom: 1.5px solid #ccc;
+  padding-bottom: 5px;
+}
+
+.ingredients-right ul {
+  text-align: left;
+  list-style: none;
+  display: block;
+  position: relative;
+  left: 450px;
+  bottom: 960px;
+  width: 120px;
+  height: 500px;
+}
+
+.ingredients-right li {
+  margin-bottom: 50px;
+  border-bottom: 1.5px solid #ccc;
+  padding-bottom: 5px;
+}
+
+footer {
+  background-color: darkgrey;
+  position: relative;
+  display: block;
+  width: auto;
+}
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #faf3e2;
+  display: flex;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+  justify-content: space-between;
+  align-items: center;
+  padding: 13px 3%;
+}
+
+.menu_icons {
+  width: 35px;
+  cursor: pointer;
+}
+.logotype {
+  position: absolute;
+  width: 70px;
+  left: 50%;
+  top: -4%;
+  transform: translateX(-50%);
+}
+
+.button-content {
+  align-items: center;
+  font-family: "Bungee Inline", Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+
+.button-content img {
+  margin-right: 7px;
+  align-items: center;
+}
+
+.hamburger {
+  position: relative;
+  display: block;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: none;
+  outline: none;
+  border: none;
+}
+
+.hamburger .bar,
+.hamburger:after,
+.hamburger:before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 5px;
+  background-color: #ff9500;
+  margin: 6px 0px;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.hamburger.is-active:before {
+  -webkit-transform: rotate(-45deg) translate(-8px, 6px);
+  transform: rotate(-45deg) translate(-8px, 6px);
+}
+
+.hamburger.is-active:after {
+  -webkit-transform: rotate(45deg) translate(-9px, -8px);
+  transform: rotate(45deg) translate(-9px, -8px);
+}
+
+.hamburger.is-active .bar {
+  opacity: 0;
+}
+
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  right: 100%;
+  width: 100%;
+  min-height: 100vh;
+  display: block;
+  z-index: 98;
+  background-color: #fffdf0;
+  padding-top: 160px;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.mobile-nav.is-active {
+  right: 0;
+}
+
+.mobile-nav a {
+  display: block;
+  width: 100%;
+  max-width: 200px;
+  margin: 0 auto 16px;
+  text-align: center;
+  padding: 12px 16px;
+  background-color: #12002f;
+  color: #000;
+  text-decoration: none;
+}
+
+.mobile-nav a:hover {
+  background-color: #24104f;
+}
+
+button {
+  width: 181px;
+  height: 45px;
+  margin-left: 5px;
+  align-items: center;
+}
+button img {
+  width: 35px;
+  height: 25px;
+  margin-left: 5px;
+  align-items: center;
+  margin-bottom: 3px;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+}
+.menu ul {
+  margin-left: 25px;
+  display: flex;
+  list-style: none;
+}
+.menu ul a {
+  margin-left: 10px;
+  text-transform: capitalize;
+  font-size: 18px;
+  color: black;
+  text-decoration: 0;
+  position: relative;
+}
+.menu ul a:after {
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: #f7a800;
+  transition: 0.2s ease-out;
+}
+
+.menu label:hover,
+.menu label:focus {
+  background: #0000B5;
+}
+.header-end {
+  display: flex;
+  align-items: center;
+}
+
+button {
+  cursor: pointer;
+  display: flexbox;
+  align-items: center;
+  border: 10;
+  padding: 5px 0px;
+  background-color: #0000B5;
+  color: white;
+  text-transform: uppercase;
+  border-radius: 50px;
+  z-index: 1;
+  transition: 0.2s ease-out;
+}
+button span {
+  font-family: "Bungee Spice", Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  width: 100%;
+  text-align: center;
+}
+button:hover {
+  transform: scale(1.06);
+}
+
+.slider-container {
+  position: relative;
+  width: 1000px;
+  height: 600px;
+  max-width: 100%;
+  overflow: hidden;
+  margin: 100px auto;
+}
+
+.slider-img {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.slider-img.active {
+  opacity: 1;
+}
+
+.slider-dots {
+  position: relative;
+  bottom: 90px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.slider-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #ccc;
+  margin: 0 5px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.slider-dot.active {
+  background-color: #ff9500;
+}
+
+main .services {
+  background-color: #fffdf0;
+}
+
+main .services .container {
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
+
+main .services .container .services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 16px;
+  padding-top: 30px;
+}
+main .services .container .services-grid .service {
+  background-color: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 32px;
+}
+
+main .services .container .services-grid .service img {
+  width: 260px;
+  margin-bottom: 16px;
+}
+
+main .services .container .services-grid .service h4 {
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+main .services .container .services-grid .service p {
+  font-size: 16px;
+  text-align: center;
+}
+
+@media (max-width: 1024px) {
+  main .services .container .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  main .services {
+    background-color: #fffdf0;
+  }
+
+  main .services .container {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+
+  main .services .container .services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 16px;
+    padding-top: 30px;
+  }
+  main .services .container .services-grid .service {
+    background-color: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 32px;
+  }
+
+  main .services .container .services-grid .service img {
+    width: 260px;
+    margin-bottom: 16px;
+  }
+
+  main .services .container .services-grid .service h4 {
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+
+  main .services .container .services-grid .service p {
+    font-size: 16px;
+    text-align: center;
+  }
+  .burger-partition {
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 767px) {
+  main .services .container .services-grid {
+    grid-template-columns: 1fr;
+  }
+  main .services {
+    background-color: #fffdf0;
+  }
+
+  main .services .container {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+
+  main .services .container .services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 16px;
+    padding-top: 30px;
+  }
+  main .services .container .services-grid .service {
+    background-color: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 32px;
+  }
+
+  main .services .container .services-grid .service img {
+    width: 260px;
+    margin-bottom: 16px;
+  }
+
+  main .services .container .services-grid .service h4 {
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+
+  main .services .container .services-grid .service p {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .burger-partition {
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+}
+
+.message {
+  font-family: "Bungee Inline", cursive;
+  color: brown;
+}
+
+.menuTitle {
+  font-family: "Bungee Inline", cursive;
+  color: black;
+}

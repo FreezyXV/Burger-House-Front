@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Montserrat:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bungee&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bungee+Inline&display=swap");
+
+body {
+  background-color: #FAF5ED;
+}
+
+main .services {
+  background-color: #FAF5ED; 
+}
+
+main .services .container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.service {
+  cursor: pointer;
+  transition: transform 500ms; 
+}
+
+.service:hover {
+  transform: scale(1.01);
+}
+
+main .services .container .services-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    2,
+    1fr
+  ); 
+  grid-gap: 16px;
+}
+
+main .services .container .services-grid .service {
+  background-color: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 30px;
+}
+
+main .services .container .services-grid .service img {
+  width: 100%; 
+  max-width: 260px; 
+}
+
+main .services .container .services-grid .service h4,
+main .services .container .services-grid .service p {
+  text-align: center;
+}
+
+main .services .container .services-grid .service h4 {
+  font-size: 24px;
+}
+
+main .services .container .services-grid .service p {
+  font-size: 16px;
+}
+
+@media (max-width: 440px) {
+  main .services .container .services-grid {
+    grid-template-columns: 1fr; 
+  }
+
+  .container {
+    margin-top: 100px;
+  }
+
+  .menuName .service h3 {
+    font-size: 14px;
+    text-decoration: none;
+  }
+}
+
+.burger-partition,
+.message,
+.menuTitle {
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.menuName {
+  font-family: "Bungee Inline", cursive;
+  text-decoration: none;
+  font-size: 24px;
+}
+
+.message {
+  color: brown;
+  font-size: 16px;
+}
+
+.menuTitle {
+  font-size: 24px;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}

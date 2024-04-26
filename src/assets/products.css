@@ -1,0 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Montserrat:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bungee&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bungee+Inline&display=swap");
+
+body {
+  background-color: #faf5ed;
+  min-height: 100vh;
+  font-family: "Montserrat", sans-serif;
+}
+
+.service {
+  cursor: pointer;
+  transition: transform 500ms;
+}
+
+.price {
+  font-size: 16px;
+  text-align: center;
+  font-family: "Bungee Spice", Arial, Helvetica, sans-serif;
+}
+
+.service:hover {
+  transform: scale(1.01);
+}
+
+.container1 {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.services-grid1 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 16px;
+  padding-top: 20px;
+}
+
+.service {
+  background-color: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  width: 350px;
+  height: 350px;
+}
+
+.service img {
+  width: 100%;
+  max-width: 260px;
+}
+
+.service h3,
+.service p {
+  text-align: center;
+}
+
+@media (max-width: 1024px) {
+  .services-grid1 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .services-grid1 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.message,
+.menuTitle {
+  font-family: "Bungee Inline", cursive;
+  text-align: center;
+}
+
+.message {
+  color: brown;
+}
+
+.menuTitle {
+  color: black;
+  padding-bottom: 5px;
+  text-decoration: none;
+  margin-top: 80px;
+}
+
+

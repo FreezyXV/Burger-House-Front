@@ -1,0 +1,163 @@
+.cart-container {
+  background-color: #faf5ed;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 80px auto;
+  border-radius: 8px;
+  max-width: 670px;
+}
+
+.cart-title,
+.total-price {
+  font-family: "Bungee Inline", sans-serif;
+  text-align: center;
+  color: #591f1f;
+}
+
+.item-quantity,
+.item-price {
+  font-size: 18px;
+  font-weight: bold;
+  color: #591f1f;
+  padding-left: 0;
+}
+
+.total-price {
+  font-size: 24px;
+  font-weight: bold;
+  color: #591f1f;
+}
+
+.cart-item,
+.submit-order,
+.remove-item,
+.modify-menu,
+.toggle-menu-details {
+  border-radius: 8px;
+  padding: 10px;
+  font-family: "Bungee Inline", sans-serif;
+  cursor: pointer;
+  transition: background-color 300ms;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.item-details,
+.modify-remove-buttons {
+  flex-grow: 1;
+}
+
+.img-box .item-image {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 20px;
+}
+
+.item-title {
+  font-family: "Bungee Spice", sans-serif;
+  color: #030303;
+}
+
+.remove-item,
+.modify-menu {
+  color: white;
+  border: none;
+  flex: 1;
+  margin: 15px 0 0px 0px;
+}
+
+.remove-item {
+    padding: 15px;
+  background-color: #da0000;
+}
+
+.remove-item:hover {
+  background-color: #ff0000;
+}
+
+.modify-menu {
+  background-color: rgb(0, 166, 0);
+  margin-right: 20px;
+  padding: 15px;
+}
+
+.modify-menu:hover {
+  background-color: rgb(0, 203, 0);
+}
+
+.toggle-menu-details {
+  background-color: #faf5ed;
+  color: black;
+  font-weight: 900;
+  font-size: 30px;
+  border: none;
+  border-radius: 8px 8px 8px 8px;
+  padding: 0px 10px 2px 10px;
+  transition: background-color 300ms, transform 300ms ease;
+  cursor: pointer;
+  margin-bottom: -7px;
+}
+
+.toggle-menu-details.expanded {
+  background-color: #ffd230;
+  border-radius: 8px 8px 0 0;
+}
+
+.toggle-menu-details:hover {
+  background-color: rgb(249, 249, 247) ed;
+}
+
+.selected-options {
+  background-color: #faf5ed;
+  border-radius: 0 8px 8px 8px;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 400ms ease-in-out, background-color 300ms,
+    padding 400ms ease-in-out;
+  padding: 0 10px;
+  box-shadow: none;
+}
+
+.selected-options.expanded {
+  max-height: 500px;
+  padding: 10px;
+  background-color: #faf5ed;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+}
+
+.submit-order {
+  display: block;
+  width: 100%;
+  background-color: #f8ca1c;
+  color: white;
+  border: none;
+  font-weight: bold;
+  font-family: "Bungee Inline";
+  margin-top: 20px;
+}
+
+.submit-order:hover {
+  background-color: #ffd230;
+}
+
+.empty-cart {
+  text-align: center;
+  font-family: "Bungee Inline";
+  color: #8d2727;
+}
+
+.selected-option-detail {
+  display: flex;
+  align-items: center;
+  font-family: "Bungee Inline";
+  padding-left: 10px;
+}

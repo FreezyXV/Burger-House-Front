@@ -1,0 +1,232 @@
+@import url("https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Montserrat:wght@500&family=Bungee&family=Bungee+Inline&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 95%;
+  height: 45px;
+  background-color: #faf3e2;
+  display: flex;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+  justify-content: space-between;
+  align-items: center;
+  padding: 13px 3%;
+}
+
+.logotype {
+  width: 70px;
+  transform: translateX(-140%);
+}
+
+.hamburger,
+.hamburger .bar,
+.hamburger:after,
+.hamburger:before {
+  background: none;
+  cursor: pointer;
+  display: block;
+  transition: 0.4s;
+}
+
+.hamburger {
+  position: relative;
+  width: 35px;
+  height: 35px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  border: none;
+}
+
+.hamburger .bar,
+.hamburger:after,
+.hamburger:before {
+  content: "";
+  width: 100%;
+  height: 5px;
+  background-color: #ff9500;
+  margin: 6px 0;
+}
+
+.hamburger.is-active:before {
+  transform: rotate(-45deg) translate(-8px, 6px);
+}
+
+.hamburger.is-active:after {
+  transform: rotate(45deg) translate(-9px, -8px);
+}
+
+.hamburger.is-active .bar {
+  opacity: 0;
+}
+
+.mobile-nav,
+.mobile-nav a {
+  transition: 0.4s;
+}
+
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  right: 100%;
+  width: 100%;
+  min-height: 100vh;
+  display: block;
+  z-index: 98;
+  background-color: #fffdf0;
+  padding-top: 160px;
+}
+
+.mobile-nav.is-active {
+  right: 0;
+}
+
+.mobile-nav .logout-button {
+  display: block;
+  width: 100%;
+  max-width: 232px;
+  margin: 0 auto 16px;
+  text-align: center;
+  padding: 12px 16px;
+  background-color: #12002f;
+  color: #000;
+  text-decoration: none;
+  font-family: "Bungee Spice", Arial, sans-serif;
+  transform: scale(1.01);
+  text-transform: capitalize;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.mobile-nav .logout-button:hover {
+  background-color: #39216f;
+}
+
+.mobile-nav a {
+  display: block;
+  width: 100%;
+  max-width: 200px;
+  margin: 0 auto 16px;
+  text-align: center;
+  padding: 12px 16px;
+  background-color: #12002f;
+  color: #000;
+  text-decoration: none;
+}
+
+.mobile-nav a:hover {
+  background-color: #39216f;
+}
+
+@media (max-width: 768px), (max-width: 1024px) {
+  .menu ul li a,
+  .header-end .MaCommande {
+    display: none;
+  }
+
+  .logotype {
+    top: 5%;
+    transform: translateX(0%);
+  }
+
+  .hamburger,
+  .header-end .CartIcon {
+    display: block;
+    width: 35px;
+  }
+
+  .header-end .aMaCommande {
+    padding: 5px;
+  }
+}
+
+.CartIcon {
+  width: 30px;
+  padding: 7px;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+}
+
+.menu ul {
+  margin-left: 25px;
+  display: flex;
+  list-style: none;
+}
+
+.menu ul .link {
+  margin-left: 10px;
+  text-transform: capitalize;
+  font-size: 18px;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden; /* Ensure the transition effect doesn't overflow the link area */
+}
+
+.menu ul .link:after {
+  position: absolute;
+  left: 50%;
+  bottom: -5px;
+  content: "";
+  width: 0%;
+  height: 4px;
+  background-color: #f7a800;
+  transition: width 0.2s ease, left 0.2s ease;
+  transform: translateX(-50%);
+}
+
+.menu ul .link:hover:after {
+  width: 100%;
+  left: 0;
+  transform: translateX(0%);
+}
+
+.header-end {
+  display: flex;
+  align-items: center;
+}
+
+a {
+  font-family: "Bungee Spice", Arial, sans-serif;
+  transform: scale(1.01);
+}
+
+.aMaCommande {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  margin-top: -2px;
+  background-color: #0000b5;
+  padding: 5px;
+  border-radius: 30px;
+  transition: transform 0.4s ease-out;
+}
+
+p {
+  font-family: "Bungee", Arial, sans-serif;
+  text-align: left;
+  padding: 10px;
+  color: #fff;
+}
+
+.menu ul li a {
+  position: relative;
+  overflow: hidden;
+}
+
+.aMaCommande:hover,
+.aMaCommande:focus {
+  transform: scale(1.05);
+  transition: transform 0.4s ease-out;
+}

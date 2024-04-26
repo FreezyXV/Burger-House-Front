@@ -1,0 +1,220 @@
+@import url("https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Montserrat:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bungee&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bungee+Inline&display=swap");
+
+.product-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 100vh;
+  background-color: #faf5ed;
+}
+
+.product-image {
+  max-width: 100%;
+  max-height: 80vh;
+}
+
+.achat {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  align-items: center;
+  width: 400px;
+}
+
+.product-title {
+  font-family: "Bungee Inline", cursive;
+  color: brown;
+  text-align: center;
+}
+
+.product-details {
+  color: rgb(79, 29, 29);
+  font-family: "Bungee Inline", cursive;
+  width: fit-content;
+  text-align: justify;
+  padding-top: 10px;
+}
+
+.product-description,
+.product-image-section,
+.purchase-section {
+  width: 400px;
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  color: black;
+  justify-content: center;
+}
+
+.text {
+  font-family: "Bungee Spice", Arial, Helvetica, sans-serif;
+}
+
+.unit-price {
+  color: red;
+}
+
+.product-image {
+  width: 30%; 
+}
+
+.purchase-section {
+  background-color: white;
+  border-radius: 20px;
+  border: solid 3px #ff9900;
+  padding: 20px 20px 20px 20px;
+  max-width: 300px;
+}
+
+.total-cost {
+  font-weight: bold;
+  font-family: "Bungee Inline", Arial, Helvetica, sans-serif;
+  color: rgb(79, 29, 29);
+  font-size: 22px;
+  text-align: center;
+}
+
+.order-button {
+  display: flex;
+  font-family: "Bungee Inline", Arial, Helvetica, sans-serif;
+  position: relative;
+  padding: 15px 25px;
+  background-color: #ff9900;
+  color: #fff;
+  border: none;
+  border-radius: 15px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 15px;
+  justify-content: center;
+  transition: 400ms;
+}
+
+.order-button:hover {
+  transform: scale(1.06);
+  transition: 400ms;
+}
+
+.purchase-options,
+.quantity-control,
+.quantity-buttons {
+  display: flex;
+  align-items: center; 
+  justify-content: center; 
+}
+
+.quantity-control button,
+.order-button {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quantity-control button {
+  font-family: "Bungee Inline", Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  padding: 0; 
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: #0000B5;
+  width: 35px;
+  height: 35px;
+  font-size: 25px;
+  color: #fff;
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  transition: 400ms;
+}
+
+.quantity-control button span {
+  font-family: "Bungee Spice", Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  width: 100%;
+  text-align: center;
+}
+.quantity-control button:hover {
+  transform: scale(1.06);
+  transition: 400ms;
+}
+
+.quantity-display {
+  font-family: "Bungee Spice", Arial, Helvetica, sans-serif;
+  padding: 10px;
+}
+
+.quantity-selector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-option {
+  cursor: pointer;
+  transition: 400ms;
+  background-color: transparent;
+  border: none;
+  font-size: 20px;
+  padding-top: 15px;
+}
+
+.menu-option:hover {
+  transform: scale(1.06);
+  transition: 400ms;
+}
+
+@media (max-width: 820px) {
+  .product-section {
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+  }
+
+  .product-image {
+    width: 65%; 
+    max-width: none; 
+  }
+
+  .product-details,
+  .purchase-section {
+    padding: 10px;
+    text-align: center; 
+  }
+
+  .order-button,
+  .quantity-control button {
+    padding: 10px 20px; 
+  }
+
+  .text,
+  .total-cost,
+  .menu-option {
+    font-size: large; 
+  }
+
+  .product-title {
+    margin-top: 70px;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-title,
+  .product-details {
+    font-size: smaller; 
+  }
+
+  .purchase-section,
+  .quantity-selector {
+    width: 100%; 
+    max-width: 100%; 
+  }
+
+  .quantity-control button {
+    font-size: 20px;
+  }
+}
