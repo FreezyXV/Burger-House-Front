@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useLocation, useNavigate } from "react-router-dom";
-import { getMenuById, getAllItems } from "../../../Back/src/api/functions";
 import "../assets/Menu.css";
 
+const BASE_URL = "http://localhost:2233/api";
 // Ce composant permet d'afficher le Menu selectionné ainsi que les options diverses du Menu a selectionner et envoyer vers le Panier.
 function Menu({ addToCart, updateCart }) {
   const { menuId } = useParams();
@@ -68,6 +68,26 @@ function Menu({ addToCart, updateCart }) {
       addToCart(cartItem);
     }
     navigate("/commande");
+  };
+
+  const getMenuById = async (menuId) => {
+    const response = await fetch(`${BASE_URL}/menus/${menuId}`);
+    if (!response.ok) {
+      throw new Error("Menu not found");
+    }
+    return await response.json();
+  };
+
+  const getAllItems = async (type) => {
+    try {
+      const endpoint = type ? `/products?type=${type}` : "/products";
+      const response = await fetch(`${BASE_URL}${endpoint}`);
+      const items = await response.json();
+      return items;
+    } catch (error) {
+      console.error("There was an error getting all products: ", error);
+      throw error;
+    }
   };
 
   if (isLoading) return <div>Loading...</div>;

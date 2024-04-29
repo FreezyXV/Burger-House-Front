@@ -1,5 +1,5 @@
 import React from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "../assets/SuccessPage.css";
 
 // Composant qui s'affiche lorsque la Commande est validée avec succès

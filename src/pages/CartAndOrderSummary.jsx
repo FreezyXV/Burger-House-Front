@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { getItemById } from "../../../Back/src/api/functions";
 import "../assets/summary.css";
 
 // Ce Composant est le Panier du Site
@@ -17,6 +16,26 @@ const CartAndOrderSummary = ({
   const [expandedMenus, setExpandedMenus] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const navigate = useNavigate();
+
+async function getItemById(type, id) {
+    var response = null;
+  
+    if (type === "Menu") {
+      response = await fetch(`http://localhost:2233/api/menus/${id}`);
+    } else {
+      response = await fetch(`http://localhost:2233/api/products/${id}`);
+    }
+  
+    if (!response.ok) {
+      if (response.status === 404) {
+        return null;
+      }
+  
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+  
+    return response.json();
+  }
 
   //Cette fonction s'assure que les informations de l'utilisateur dans l'application sont à jour. Il écoute si l'utilisateur se connecte ou se déconnecte et met à jour ces informations automatiquement.
   useEffect(() => {
