@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { getItemById } from "../../../Back/src/api/functions";
 import "../assets/summary.css";
 
 // Ce Composant est le Panier du Site
@@ -16,26 +17,6 @@ const CartAndOrderSummary = ({
   const [expandedMenus, setExpandedMenus] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const navigate = useNavigate();
-
-async function getItemById(type, id) {
-    var response = null;
-  
-    if (type === "Menu") {
-      response = await fetch(`http://localhost:2233/api/menus/${id}`);
-    } else {
-      response = await fetch(`http://localhost:2233/api/products/${id}`);
-    }
-  
-    if (!response.ok) {
-      if (response.status === 404) {
-        return null;
-      }
-  
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-  
-    return response.json();
-  }
 
   //Cette fonction s'assure que les informations de l'utilisateur dans l'application sont à jour. Il écoute si l'utilisateur se connecte ou se déconnecte et met à jour ces informations automatiquement.
   useEffect(() => {
@@ -135,7 +116,7 @@ async function getItemById(type, id) {
 
   //Soumet la commande au serveur. Envoie les détails de la commande via une requête POST à l'API du backend. Gère la réponse du serveur, y compris le traitement des erreurs de réseau ou des réponses HTTP non satisfaisantes.
   const submitOrder = async (orderDetails) => {
-    const url = "http://localhost:2233/api/orders/add/";
+    const url = `${import.meta.env.VITE_API_URL}/api/orders/add/`;
     try {
       const response = await fetch(url, {
         method: "POST",

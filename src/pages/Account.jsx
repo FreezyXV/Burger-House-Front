@@ -49,7 +49,7 @@ function Account({ user }) {
 
     try {
       const response = await fetch(
-        `http://localhost:2233/api/users/${user._id}`,
+        `${import.meta.env.VITE_API_URL}/api/users/${user._id}`,
         {
           method: "PUT",
           headers: {
@@ -79,7 +79,7 @@ function Account({ user }) {
 
       if (userInfo.newPassword && userInfo.currentPassword) {
         const passwordResponse = await fetch(
-          `http://localhost:2233/api/users/change-password/${user._id}`,
+          `${import.meta.env.VITE_API_URL}/api/users/change-password/${user._id}`,
           {
             method: "PUT",
             headers: {

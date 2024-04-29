@@ -43,9 +43,9 @@ function Produit({ addToCart }) {
     var response = null;
   
     if (type === "Menu") {
-      response = await fetch(`http://localhost:2233/api/menus/${id}`);
+      response = await fetch(`${import.meta.env.VITE_API_URL}/api/menus/${id}`);
     } else {
-      response = await fetch(`http://localhost:2233/api/products/${id}`);
+      response = await fetch(`${import.meta.env.VITE_API_URL}/api/products/${id}`);
     }
   
     if (!response.ok) {

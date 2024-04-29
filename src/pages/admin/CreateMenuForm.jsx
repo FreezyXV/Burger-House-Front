@@ -29,6 +29,7 @@ function CreateMenuForm({ onAdd, onClose }) {
     setIsVisible(false);
     setTimeout(() => onClose(), 500);
   };
+  
 
   return (
     <div className={`form-container ${!isVisible ? "hidden" : ""}`}>

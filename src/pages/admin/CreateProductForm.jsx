@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { createProduct } from "../../../../Back/src/api/functions";
 import "../../assets/Admin.css";
 
 function CreateProductForm({ onAdd, onClose }) {
@@ -29,6 +28,7 @@ function CreateProductForm({ onAdd, onClose }) {
     setIsVisible(false);
     setTimeout(() => onClose(), 500);
   };
+  
 
   return (
     <div className={`form-container ${!isVisible ? "hidden" : ""}`}>
