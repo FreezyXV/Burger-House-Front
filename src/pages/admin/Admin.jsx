@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import CreateProductForm from "./CreateProductForm";
 import CreateMenuForm from "./CreateMenuForm";
-import "/Users/yoanpetrov/Desktop/Code/Burger Town Certification/Front/src/assets/Admin.css";
+import "../../assets/Admin.css";
 
 import {
   getAllItems,

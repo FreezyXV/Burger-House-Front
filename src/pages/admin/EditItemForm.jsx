@@ -1,5 +1,5 @@
 import React from "react";
-import "/Users/yoanpetrov/Desktop/Code/Burger Town Certification/Front/src/assets/Admin.css";
+import "../../assets/Admin.css";
 
 function EditItemForm({ item, itemType, onChange, onSubmit, onCancel }) {
   return (
