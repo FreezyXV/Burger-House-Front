@@ -9,7 +9,7 @@ import {
   getAllMenus,
   deleteProduct,
   deleteMenu,
-} from "../../../../Back/src/api/functions";
+} from "../../functions/frontFunctions";
 
 function Admin() {
   const [products, setProducts] = useState([]);

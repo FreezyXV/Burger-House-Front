@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../../assets/Admin.css";
-import { createMenu } from "../../../../Back/src/api/functions";
+import { createMenu } from "../../functions/frontFunctions";
 
 function CreateMenuForm({ onAdd, onClose }) {
   const [menu, setMenu] = useState({});

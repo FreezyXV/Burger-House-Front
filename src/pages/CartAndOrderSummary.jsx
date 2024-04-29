@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { getItemById } from "../../../Back/src/api/functions";
+import { getItemById } from "../functions/frontFunctions";
 import "../assets/summary.css";
 
 // Ce Composant est le Panier du Site

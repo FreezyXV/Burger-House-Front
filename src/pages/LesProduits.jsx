@@ -1,10 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import "../assets/products.css";
-import {
-  getAllItems,
-  getAllMenus,
-} from "/Users/yoanpetrov/Desktop/Code/Burger Town Certification/Back/src/api/functions";
+import { getAllItems, getAllMenus } from "../functions/frontFunctions";
 
 // Ce composant sert a Afficher Les Produits et les Menus
 function LesProduits() {

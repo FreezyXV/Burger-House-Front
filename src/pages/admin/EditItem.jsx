@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import EditItemForm from "./EditItemForm";
-import { getItemById, updateItem } from "../../../../Back/src/api/functions";
+import { getItemById, updateItem } from "../../functions/frontFunctions";
 
 function EditItem() {
   const { type, itemId } = useParams();

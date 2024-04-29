@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useLocation, useNavigate } from "react-router-dom";
-import { getMenuById, getAllItems } from "../../../Back/src/api/functions";
+import { getMenuById, getAllItems } from "../functions/frontFunctions";
 import "../assets/Menu.css";
 
 // Ce composant permet d'afficher le Menu selectionné ainsi que les options diverses du Menu a selectionner et envoyer vers le Panier.
