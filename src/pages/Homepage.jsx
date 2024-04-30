@@ -9,7 +9,7 @@ function Homepage() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const slideInterval = useRef();
 
-  const totalSlides = 3; 
+  const totalSlides = 3;
 
   const goToSlide = (index) => {
     setCurrentIndex(index);

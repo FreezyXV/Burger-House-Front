@@ -70,7 +70,6 @@ function Menu({ addToCart, updateCart }) {
     navigate("/commande");
   };
 
-  
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>Error: {error}</div>;
   if (!menuDetails) return <div>Menu not found</div>;
@@ -101,7 +100,7 @@ function Menu({ addToCart, updateCart }) {
           >
             <img
               src={`https://i.imgur.com/${
-                size === "medium" ? "5bEF1xN" : "Xrc7Tze"
+                size === "medium" ? "KuCqzY6" : "gAuWatT"
               }.png`}
               alt={`${size} size option`}
               className="menu-size-icon"
@@ -139,7 +138,7 @@ function Menu({ addToCart, updateCart }) {
         </div>
       ))}
       <div className="total-price">
-       Votre Total: €{calculateTotalPrice().toFixed(2)}
+        Votre Total: €{calculateTotalPrice().toFixed(2)}
       </div>
       <button
         className={isModifyingState ? "modify-order" : "submit-order"}
