@@ -91,7 +91,7 @@ const AppRouter = () => {
   const fetchCartItems = async (user) => {
     try {
       const response = await fetch(
-        `http://localhost:2233/api/carts/${user._id}`,
+        `${meta.env.VITE_API_URL}/api/carts/${user._id}`,
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("userToken")}`,
