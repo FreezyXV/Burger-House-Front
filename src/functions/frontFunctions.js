@@ -1,4 +1,4 @@
-
+//frontFunctions.js
 const BASE_URL = `${import.meta.env.VITE_API_URL}/api`;
 
 // Afficher tous les Produits (hors Menus)
@@ -19,7 +19,6 @@ export const getAllMenus = async () => {
   try {
     const response = await fetch(`${BASE_URL}/menus`);
     const allMenus = await response.json();
-    console.log(allMenus)
     return allMenus;
   } catch (error) {
     console.error("There was an error getting all menus: ", error);

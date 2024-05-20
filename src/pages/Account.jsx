@@ -110,7 +110,7 @@ function Account({ user }) {
 
   return (
     <div className="account-page">
-      <h1>Mon Compte</h1>
+      <h1 className="Account-title">Mon Compte</h1>
       <form onSubmit={handleSubmit} className="create-account-form">
         <input
           type="text"

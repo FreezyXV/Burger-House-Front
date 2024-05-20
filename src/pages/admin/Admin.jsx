@@ -15,6 +15,7 @@ function Admin() {
   const [products, setProducts] = useState([]);
   const [menus, setMenus] = useState([]);
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
   const [showProductForm, setShowProductForm] = useState(false);
   const [showMenuForm, setShowMenuForm] = useState(false);
@@ -30,10 +31,18 @@ function Admin() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        setProducts(await getAllItems());
-        setMenus(await getAllMenus());
+        console.log('Fetching products and menus...');
+        const fetchedProducts = await getAllItems();
+        const fetchedMenus = await getAllMenus();
+        setProducts(fetchedProducts);
+        setMenus(fetchedMenus);
+        console.log("Fetched products:", fetchedProducts);
+        console.log("Fetched menus:", fetchedMenus);
       } catch (error) {
+        console.error("Failed to fetch data:", error);
         setError("Failed to load data. Please try again later.");
+      } finally {
+        setLoading(false);
       }
     };
     fetchData();
@@ -57,15 +66,19 @@ function Admin() {
   };
 
   const handleEditClick = (item, itemType) => {
-    navigate(`/admin/edit/${item.type}/${item._id}`);
+    navigate(`/admin/edit/${itemType}/${item._id}`);
   };
+
+  if (!user || !user.isAdmin) {
+    return <div className="not-allowed">Not allowed</div>;
+  }
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
 
   if (error) {
     return <div>Error: {error}</div>;
-  }
-
-  if (!user.isAdmin) {
-    return "Not allowed";
   }
 
   return (
@@ -79,7 +92,7 @@ function Admin() {
                 {product.title}
                 <div className="buttons">
                   <button
-                    onClick={() => handleEditClick(product, product._id)}
+                    onClick={() => handleEditClick(product, "product")}
                     className="edit"
                   >
                     Modifier
@@ -101,13 +114,15 @@ function Admin() {
             Ajouter un Produit
           </button>
           {showProductForm && (
-            <CreateProductForm
-              onAdd={(product) => {
-                setProducts((prev) => [...prev, product]);
-                closeProductForm();
-              }}
-              onClose={closeProductForm}
-            />
+            <div className="form-container">
+              <CreateProductForm
+                onAdd={(product) => {
+                  setProducts((prev) => [...prev, product]);
+                  closeProductForm();
+                }}
+                onClose={closeProductForm}
+              />
+            </div>
           )}
         </div>
 
@@ -119,7 +134,7 @@ function Admin() {
                 {menu.title}
                 <div className="buttons">
                   <button
-                    onClick={() => handleEditClick(menu, menu._id)}
+                    onClick={() => handleEditClick(menu, "menu")}
                     className="edit"
                   >
                     Modifier
@@ -141,13 +156,15 @@ function Admin() {
             Ajouter un Menu
           </button>
           {showMenuForm && (
-            <CreateMenuForm
-              onAdd={(menu) => {
-                setMenus((prev) => [...prev, menu]);
-                closeMenuForm();
-              }}
-              onClose={closeMenuForm}
-            />
+            <div className="form-container">
+              <CreateMenuForm
+                onAdd={(menu) => {
+                  setMenus((prev) => [...prev, menu]);
+                  closeMenuForm();
+                }}
+                onClose={closeMenuForm}
+              />
+            </div>
           )}
         </div>
       </div>

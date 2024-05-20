@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useLocation, useNavigate } from "react-router-dom";
 import { getMenuById, getAllItems } from "../functions/frontFunctions";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "../assets/Menu.css";
 
-// Ce composant permet d'afficher le Menu selectionné ainsi que les options diverses du Menu a selectionner et envoyer vers le Panier.
 function Menu({ addToCart, updateCart }) {
   const { menuId } = useParams();
   const navigate = useNavigate();
@@ -18,7 +19,6 @@ function Menu({ addToCart, updateCart }) {
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(true);
 
-  // Fonction qui affiche le Menu en question et les produits divers à choisir
   useEffect(() => {
     const fetchMenuDetails = async () => {
       try {
@@ -34,12 +34,10 @@ function Menu({ addToCart, updateCart }) {
     fetchMenuDetails();
   }, [menuId]);
 
-  // Fonction qui permet de faire des selections dans le Menu
   const handleOptionChange = (category, value) => {
     setSelectedOptions((prev) => ({ ...prev, [category]: value }));
   };
 
-  // Fonction qui permet de calculer le cout Final du Menu en Fonction des selections faites
   const calculateTotalPrice = () => {
     let price = menuDetails ? menuDetails.price : 0;
     if (selectedOptions.size === "large") {
@@ -48,7 +46,6 @@ function Menu({ addToCart, updateCart }) {
     return price;
   };
 
-  // Fonction qui envoie le menu avec les selections faites vers le Panier
   const handleSubmitMenuOrder = () => {
     if (!menuDetails || Object.keys(selectedOptions).length === 0) {
       setError("Please select options before submitting.");
@@ -64,8 +61,10 @@ function Menu({ addToCart, updateCart }) {
 
     if (isModifyingState) {
       updateCart(cartItem);
+      toast.info("Cart updated successfully!");
     } else {
       addToCart(cartItem);
+      toast.success("Item added to cart!");
     }
     navigate("/commande");
   };
@@ -76,6 +75,7 @@ function Menu({ addToCart, updateCart }) {
 
   return (
     <div className="menu-container">
+      <ToastContainer position="bottom-center" />
       <section className="menuSection">
         <h1 className="exactMenuTitle">{menuDetails.title}</h1>
         <img

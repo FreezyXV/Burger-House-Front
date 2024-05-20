@@ -1,14 +1,15 @@
 import React, { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import Banner1 from "../assets/banner1.jpg";
-import Banner2 from "../assets/banner2.jpeg";
-import Banner3 from "../assets/banner3.jpg.avif";
+import Banner2 from "../assets/banner2.jpg";
+import Banner3 from "../assets/banner3.jpg";
+import BurgerImg from "../assets/Burgers - Imgur.png";
+import MenuImg from "../assets/Burger House Menus - Imgur.png";
 import "../assets/homepage.css";
 
-// Ce Composant est une Page d'Accueil
 function Homepage() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const slideInterval = useRef();
-
   const totalSlides = 3;
 
   const goToSlide = (index) => {
@@ -21,7 +22,6 @@ function Homepage() {
 
   useEffect(() => {
     slideInterval.current = setInterval(nextSlide, 2000);
-
     return () => clearInterval(slideInterval.current);
   }, []);
 
@@ -61,6 +61,37 @@ function Homepage() {
           ></span>
         ))}
       </div>
+      
+      <section className="quick-links-homepage">
+      <Link to="/produits/Menu">
+              <div className="Shorcut">
+                <div className="Shorcut-content">
+                  <div className="menuName">Découvrez nos Menus</div>
+                </div>
+                <figure className="img-box">
+                  <img src={MenuImg} className="img" alt="Menus" />
+                </figure>
+              </div>
+            </Link>
+            <Link to="/produits/Burgers">
+            <div className="Shorcut">
+              <div className="Shorcut-content">
+                <div className="menuName">Découvrez nos Burgers</div>
+              </div>
+              <figure className="img-box">
+                <img src={BurgerImg} className="img" alt="Burgers" />
+              </figure>
+            </div>
+            </Link>
+      </section>
+
+      <section className="store-locator">
+        <h2>Venez à cette adresse:</h2>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.498842685599!2d2.309779515674995!3d48.87252577928868!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66fc1fbf83f13%3A0x47b250218112d60a!2s124%20Rue%20La%20Bo%C3%A9tie%2C%2075008%20Paris%2C%20France!5e0!3m2!1sen!2sus!4v1664534861601!5m2!1sen!2sus"
+          width="600" height="450" style={{ border: 0 }} allowFullScreen="" loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"></iframe>
+      </section>
     </main>
   );
 }

@@ -1,0 +1,102 @@
+.footer {
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0;
+  margin-top: 30px;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.footer-section {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.fab {
+  font-style: normal;
+  font-size: 18px;
+}
+
+.footer-title {
+  color: #ffffff;
+  font-size: 1.4em;
+  margin-bottom: 10px;
+  font-family: "Bungee Spice", Arial, sans-serif;
+}
+
+.footer-section-text {
+  text-align: center;
+  color: #e7e7e7;
+}
+
+.quick-links-footer {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.social {
+  font-family: "Bungee Inline", cursive;
+}
+
+.linkp {
+  font-family: "Bungee Inline", cursive;
+}
+
+.quick-links-footer li a {
+  color: #fffefe;
+  text-decoration: none;
+  display: block;
+  margin: 5px 0;
+}
+
+.social-icons a {
+  margin: 5px 10px;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.4em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-bottom {
+  background-color: #222;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+@media (min-width: 768px) {
+  .footer-container {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .footer-section {
+    width: 25%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 440px) {
+  .footer-container {
+    flex-direction: column;
+  }
+
+  .footer-section {
+    width: 100%;
+  }
+}

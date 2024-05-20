@@ -7,7 +7,7 @@ body {
 }
 
 main .services {
-  background-color: #FAF5ED; 
+  background-color: #FAF5ED;
 }
 
 main .services .container {
@@ -20,20 +20,17 @@ main .services .container {
 
 .service {
   cursor: pointer;
-  transition: transform 500ms; 
+  transition: transform 500ms;
 }
 
 .service:hover {
-  transform: scale(1.01);
+  transform: scale(1.05); /* Slightly stronger hover effect */
 }
 
 main .services .container .services-grid {
   display: grid;
-  grid-template-columns: repeat(
-    2,
-    1fr
-  ); 
-  grid-gap: 16px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px; /* Increased gap for better spacing */
 }
 
 main .services .container .services-grid .service {
@@ -45,12 +42,12 @@ main .services .container .services-grid .service {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 10px 30px;
+  padding: 12px 20px; /* Increased padding */
 }
 
 main .services .container .services-grid .service img {
-  width: 100%; 
-  max-width: 260px; 
+  width: 100%;
+  max-width: 260px;
 }
 
 main .services .container .services-grid .service h4,
@@ -66,20 +63,36 @@ main .services .container .services-grid .service p {
   font-size: 16px;
 }
 
-@media (max-width: 440px) {
+/* Responsive adjustments */
+@media (max-width: 768px) {
   main .services .container .services-grid {
-    grid-template-columns: 1fr; 
+    grid-template-columns: 1fr;
   }
 
-  .container {
-    margin-top: 100px;
+  .service {
+    padding: 8px 16px; /* Adjust padding for compact view */
   }
 
-  .menuName .service h3 {
-    font-size: 14px;
-    text-decoration: none;
+  img {
+    width: 80%;
+    max-width: 180px;
   }
 }
+
+@media (max-width: 480px) {
+  main .services .container .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .menuName, .menuTitle, .message {
+    font-size: calc(1.5vw + 1vh); /* Scalable text */
+  }
+
+  .service .menuName {
+    font-size: 16px; /* Further reduced */
+  }
+}
+
 
 .burger-partition,
 .message,
@@ -91,8 +104,7 @@ main .services .container .services-grid .service p {
 
 .menuName {
   font-family: "Bungee Inline", cursive;
-  text-decoration: none;
-  font-size: 24px;
+  font-size: 22px; /* Smaller font size */
 }
 
 .message {

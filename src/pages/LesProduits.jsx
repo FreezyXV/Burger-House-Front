@@ -68,7 +68,7 @@ function useFetchItems(categoryName) {
                     <div className="content">
                       <h3 className="menu-Title">{item.title}</h3>
                       {categoryName !== "Menu" && (
-                        <p className="price">Price: ${item.price}</p>
+                        <p className="price">Prix: ${item.price}</p>
                       )}
                     </div>
                   </div>

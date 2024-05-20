@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import "../assets/produit.css";
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 // Ce composant permet d'afficher le Produit concerné et de l'envoyer vers le Panier
 function Produit({ addToCart }) {
@@ -82,12 +85,13 @@ function Produit({ addToCart }) {
       };
 
       addToCart(cartItem);
-
-      console.log("Order submitted successfully");
+      toast.success("Order submitted successfully!");
     } catch (error) {
       console.error("Error submitting order:", error.message);
+      toast.error("Error submitting order: " + error.message);
     }
   };
+  
 
   if (isLoading) {
     return <div className="loading">Loading...</div>;
@@ -103,6 +107,7 @@ function Produit({ addToCart }) {
 
   return (
     <main>
+      <ToastContainer position="bottom-center" />
       <div className="product-section">
         <article className="product-description">
           <div className="product-title">

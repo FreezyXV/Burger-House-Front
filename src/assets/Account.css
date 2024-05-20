@@ -1,3 +1,8 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
 .create-account-form {
   max-width: 500px;
   margin: 2rem auto;
@@ -6,7 +11,20 @@
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  margin-top: 100px;
+  margin-top: 0px;
+  margin-bottom: 100px;
+}
+
+.create-account-form-sign {
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin-top: 0px;
+  margin-bottom: 300px;
 }
 
 .create-account-form input[type="text"],
@@ -26,12 +44,48 @@
   font-size: 16px;
 }
 
+.create-account-form-sign input[type="text"],
+.create-account-form-sign input[type="password"],
+.create-account-form-sign input[type="number"],
+.create-account-form-sign input[type="email"],
+.create-account-form-sign input[type="tel"],
+.create-account-form-sign input[type="date"],
+.create-account-form-sign textarea,
+.create-account-form-sign select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
 .create-account-form textarea {
   height: 100px;
   resize: vertical;
 }
 
+.create-account-form-sign textarea {
+  height: 100px;
+  resize: vertical;
+}
+
+.Account-title {
+  margin-top: 100px;
+  text-align: center;
+}
+
 .create-account-form button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.create-account-form-sign button {
   padding: 10px 20px;
   border: none;
   border-radius: 4px;
@@ -64,5 +118,5 @@
 }
 
 .login-error {
-    color: #d32f2f;
+  color: #d32f2f;
 }

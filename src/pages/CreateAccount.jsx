@@ -1,61 +1,62 @@
-import React, { useState } from "react";
-import "../assets/Account.css";
-import { useNavigate } from "react-router-dom";
+import React, { useState } from 'react';
+import '../assets/Account.css';
+import { useNavigate } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-// This component creates a new user/account in the database
 function CreateAccount() {
-  const [user, setUser] = useState({});
-  const navigate = useNavigate();
+    const [user, setUser] = useState({});
+    const navigate = useNavigate();
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setUser((prevUser) => ({
-      ...prevUser,
-      [name]: value,
-    }));
-  };
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setUser(prevUser => ({
+            ...prevUser,
+            [name]: value,
+        }));
+    };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+    const handleSubmit = async (e) => {
+        e.preventDefault();
 
-    // Check if required fields are filled
-    if (!user.username || !user.password || !user.email) {
-      console.error("Username, password, and email are required.");
-      alert("Please fill in all required fields.");
-      return;
-    }
+        if (!user.username || !user.password || !user.email) {
+            console.error("Username, password, and email are required.");
+            alert("Please fill in all required fields.");
+            return;
+        }
 
-    try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/users/register`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(user),
-      });
+        try {
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/api/users/register`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(user),
+            });
 
-      const responseData = await response.json();
+            const responseData = await response.json();
 
-      if (!response.ok) {
-        throw new Error(responseData.message || "Failed to register.");
-      }
+            if (!response.ok) {
+                throw new Error(responseData.message || "Failed to register.");
+            }
 
-      console.log(responseData);
-      navigate("/connexion"); // Navigate to the sign-in page
-    } catch (error) {
-      console.error("An error occurred during the API call:", error.message);
-      alert(error.message); // Display an alert with the error message
-    }
-  };
+            toast.success('Account created successfully!');
+            navigate('/connexion'); // Navigate to the sign-in page after showing the toast
+        } catch (error) {
+            console.error("An error occurred during the API call:", error.message);
+            alert(error.message);
+        }
+    };
 
-  const handleGoToSignIn = () => {
+      const handleGoToSignIn = () => {
     navigate("/connexion");
   };
 
   return (
     <div className="page">
-      <h1>Create Account</h1>
-      <form onSubmit={handleSubmit} className="create-account-form">
+      <ToastContainer />
+      <h1 className="Account-title">Créez votre compte</h1>
+      <form onSubmit={handleSubmit} className="create-account-form-sign">
         <input
           type="text"
           name="username"

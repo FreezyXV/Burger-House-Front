@@ -18,6 +18,7 @@ import SuccessPage from "./pages/successPage.jsx";
 import Account from "./pages/Account.jsx";
 import CreateMenu from "./pages/admin/CreateMenuForm.jsx";
 import CreateProduct from "./pages/admin/CreateProductForm.jsx";
+import Footer from "./components/Footer.jsx";
 import "./assets/App.css";
 
 const AppRouter = () => {
@@ -168,6 +169,7 @@ const AppRouter = () => {
     <React.StrictMode>
       <RouterProvider router={router}>
         <Navbar clearCart={clearCart} />
+        <Footer />
       </RouterProvider>
     </React.StrictMode>
   );

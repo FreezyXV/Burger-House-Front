@@ -63,8 +63,8 @@ function SignIn() {
 
   return (
     <div className="page">
-      <h1>Sign In</h1>
-      <form onSubmit={handleSubmit} className="create-account-form">
+      <h1 className="Account-title">Connectez-vous</h1>
+      <form onSubmit={handleSubmit} className="create-account-form-sign">
         <input
           type="text"
           name="username"
