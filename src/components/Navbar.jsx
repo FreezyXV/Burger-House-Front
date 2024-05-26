@@ -41,7 +41,7 @@ function Navbar({ clearCart }) {
             <div className="bar"></div>
           </button>
           <ul className="navbar-links">
-            <li><Link className="link" to="/carte">Notre Carte</Link></li>
+            <li><Link className="link" to="/admin">Notre Carte</Link></li>
             {isLoggedIn ? <li><Link className="link" to="/mon-compte">Mon Compte</Link></li> : <li><Link className="link" to="/connexion">Connectez-vous</Link></li>}
           </ul>
         </div>
