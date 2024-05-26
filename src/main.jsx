@@ -159,7 +159,7 @@ const AppRouter = () => {
           ),
         },
         { path: "orderconfirmation", element: <SuccessPage /> },
-        { path: "*", element: <NotFound /> },
+        //{ path: "*", element: <NotFound /> },
         { path: "mon-compte", element: <Account user={user} /> },
       ],
     },
