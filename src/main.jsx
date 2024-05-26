@@ -121,7 +121,7 @@ const AppRouter = () => {
       children: [
         { path: "/", element: <Homepage />, index: true },
         { path: "carte", element: <Carte /> },
-        { path: "admin", element: <Admin /> },
+        { path: "/admin", element: <Admin /> },
         {
           path: "inscription",
           element: <CreateAccount onUserLogin={handleUserLogin} />,
