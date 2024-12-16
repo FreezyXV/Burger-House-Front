@@ -1,3 +1,4 @@
+// src/main.jsx
 import Navbar from "./components/Navbar.jsx";
 import { createRoot } from "react-dom/client";
 import React, { useState, useEffect } from "react";
@@ -92,7 +93,7 @@ const AppRouter = () => {
   const fetchCartItems = async (user) => {
     try {
       const response = await fetch(
-        `${meta.env.VITE_API_URL}/api/carts/${user._id}`,
+        `${import.meta.env.VITE_API_URL}/api/carts/${user._id}`,
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("userToken")}`,
@@ -102,6 +103,8 @@ const AppRouter = () => {
       if (response.ok) {
         const cartData = await response.json();
         setCartItems(cartData.items);
+      } else {
+        console.error("Failed to fetch cart items:", response.statusText);
       }
     } catch (error) {
       console.error("Failed to fetch cart items:", error);
