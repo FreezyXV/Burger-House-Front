@@ -1,5 +1,4 @@
 // src/main.jsx
-import Navbar from "./components/Navbar.jsx";
 import { createRoot } from "react-dom/client";
 import React, { useState, useEffect } from "react";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
@@ -20,6 +19,7 @@ import Account from "./pages/Account.jsx";
 import CreateMenu from "./pages/admin/CreateMenuForm.jsx";
 import CreateProduct from "./pages/admin/CreateProductForm.jsx";
 import Footer from "./components/Footer.jsx";
+import Navbar from "./components/Navbar.jsx";
 import "./assets/App.css";
 
 const AppRouter = () => {
@@ -171,7 +171,7 @@ const AppRouter = () => {
   return (
     <React.StrictMode>
       <RouterProvider router={router}>
-        <Navbar clearCart={clearCart} />
+        <Navbar clearCart={clearCart} onUserLogout={handleUserLogout} />
         <Footer />
       </RouterProvider>
     </React.StrictMode>
