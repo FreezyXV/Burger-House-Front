@@ -16,7 +16,6 @@ function Navbar({ clearCart }) {
   const navigate = useNavigate();
 
   useEffect(() => {
-    console.log(user);
     const handleScroll = () => setIsScrolling(window.scrollY > 100);
     const checkLoginState = () =>
       setIsLoggedIn(!!localStorage.getItem("userToken"));

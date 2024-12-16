@@ -79,7 +79,9 @@ function Account({ user }) {
 
       if (userInfo.newPassword && userInfo.currentPassword) {
         const passwordResponse = await fetch(
-          `${import.meta.env.VITE_API_URL}/api/users/change-password/${user._id}`,
+          `${import.meta.env.VITE_API_URL}/api/users/change-password/${
+            user._id
+          }`,
           {
             method: "PUT",
             headers: {
