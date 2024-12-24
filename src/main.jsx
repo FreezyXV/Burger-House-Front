@@ -21,6 +21,7 @@ import CreateProduct from "./pages/admin/CreateProductForm.jsx";
 import Footer from "./components/Footer.jsx";
 import Navbar from "./components/Navbar.jsx";
 import "./assets/App.css";
+import "./assets/navbar.css";
 
 const AppRouter = () => {
   const [cartItems, setCartItems] = useState(() => {

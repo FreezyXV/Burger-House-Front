@@ -392,9 +392,11 @@ header {
   padding-top: 160px;
   -webkit-transition: 0.4s;
   transition: 0.4s;
+  font-family: "Bungee Spice", serif;
 }
 
 .mobile-nav.is-active {
+  font-family: "Bungee Spice", serif;
   right: 0;
 }
 
@@ -408,6 +410,7 @@ header {
   background-color: #12002f;
   color: #000;
   text-decoration: none;
+  font-family: "Bungee Spice", serif;
 }
 
 .mobile-nav a:hover {
