@@ -1,4 +1,4 @@
-import Navbar from "./components/Navbar.jsx";
+// src/main.jsx
 import { createRoot } from "react-dom/client";
 import React, { useState, useEffect } from "react";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
@@ -19,7 +19,9 @@ import Account from "./pages/Account.jsx";
 import CreateMenu from "./pages/admin/CreateMenuForm.jsx";
 import CreateProduct from "./pages/admin/CreateProductForm.jsx";
 import Footer from "./components/Footer.jsx";
+import Navbar from "./components/Navbar.jsx";
 import "./assets/App.css";
+import "./assets/navbar.css";
 
 const AppRouter = () => {
   const [cartItems, setCartItems] = useState(() => {
@@ -92,7 +94,7 @@ const AppRouter = () => {
   const fetchCartItems = async (user) => {
     try {
       const response = await fetch(
-        `${meta.env.VITE_API_URL}/api/carts/${user._id}`,
+        `${import.meta.env.VITE_API_URL}/api/carts/${user._id}`,
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("userToken")}`,
@@ -102,6 +104,8 @@ const AppRouter = () => {
       if (response.ok) {
         const cartData = await response.json();
         setCartItems(cartData.items);
+      } else {
+        console.error("Failed to fetch cart items:", response.statusText);
       }
     } catch (error) {
       console.error("Failed to fetch cart items:", error);
@@ -168,7 +172,7 @@ const AppRouter = () => {
   return (
     <React.StrictMode>
       <RouterProvider router={router}>
-        <Navbar clearCart={clearCart} />
+        <Navbar clearCart={clearCart} onUserLogout={handleUserLogout} />
         <Footer />
       </RouterProvider>
     </React.StrictMode>
