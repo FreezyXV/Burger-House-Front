@@ -2,10 +2,10 @@
   background-color: #fbfbfb;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 20px;
-  margin: 80px auto;
+  margin: 80px auto 40px;
   border-radius: 8px;
-  max-width: 670px;
-  margin-bottom: 350px;
+  max-width: 1200px;
+  width: 90%;
 }
 
 .cart-title,
@@ -43,15 +43,21 @@
 
 .cart-item {
   display: flex;
+  flex-direction: row;
   align-items: center;
   background-color: #fff;
   margin-bottom: 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  flex-wrap: wrap;
 }
 
 .item-details,
 .modify-remove-buttons {
   flex-grow: 1;
+}
+
+.img-box {
+  flex-shrink: 0;
 }
 
 .img-box .item-image {
@@ -161,4 +167,119 @@
   align-items: center;
   font-family: "Bungee Inline";
   padding-left: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .cart-container {
+    max-width: 900px;
+    padding: 15px;
+  }
+
+  .img-box .item-image {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media (max-width: 768px) {
+  .cart-container {
+    margin: 60px auto 30px;
+    padding: 15px;
+    width: 95%;
+  }
+
+  .cart-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .img-box {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  .img-box .item-image {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    margin-right: 0;
+  }
+
+  .item-details {
+    width: 100%;
+  }
+
+  .item-title {
+    font-size: 1.3rem;
+  }
+
+  .item-quantity,
+  .item-price {
+    font-size: 16px;
+  }
+
+  .remove-item,
+  .modify-menu {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .modify-menu {
+    margin-bottom: 10px;
+  }
+
+  .cart-title {
+    font-size: 1.8rem;
+  }
+
+  .total-price {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cart-container {
+    margin: 70px auto 20px;
+    padding: 10px;
+  }
+
+  .cart-title {
+    font-size: 1.5rem;
+  }
+
+  .item-title {
+    font-size: 1.1rem;
+  }
+
+  .item-quantity,
+  .item-price {
+    font-size: 14px;
+  }
+
+  .remove-item,
+  .modify-menu,
+  .submit-order {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  .toggle-menu-details {
+    font-size: 24px;
+  }
+
+  .selected-option-detail img {
+    width: 80px !important;
+    height: 80px !important;
+  }
+
+  .selected-option-detail {
+    font-size: 12px;
+    flex-wrap: wrap;
+  }
+
+  .total-price {
+    font-size: 18px;
+  }
 }

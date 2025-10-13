@@ -75,7 +75,7 @@ main .services .container .services-grid .service p {
 
   img {
     width: 80%;
-    max-width: 180px;
+    /* max-width: 180px; */
   }
 }
 
