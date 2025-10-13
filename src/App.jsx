@@ -17,14 +17,15 @@ function App() {
   };
 
   return (
-    <>
+    
+    <div className="app-container">
       <Navbar clearCart={clearCart} />
-      
-      <div>
+
+      <div className="content-wrap">
         <Outlet />
       </div>
       <Footer />
-    </>
+    </div>
   );
 }
 
