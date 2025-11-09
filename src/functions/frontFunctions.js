@@ -242,7 +242,8 @@
 
 
 // src/frontFunctions.js
-const BASE_URL = `${import.meta.env.VITE_API_URL}/api`;
+// Automatically use local URL in development, production URL in production
+const BASE_URL = `${import.meta.env.DEV ? import.meta.env.VITE_API_URL_LOCAL : import.meta.env.VITE_API_URL}/api`;
 
 // Afficher tous les Produits (hors Menus)
 export const getAllItems = async (type) => {
