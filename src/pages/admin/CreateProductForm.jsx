@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import "../../assets/Admin.css";
+import { createProduct } from "../../functions/frontFunctions";
 
-function CreateProductForm({ onAdd, onClose }) {
+function CreateProductForm({ onAdd, onClose, authToken }) {
   const [product, setProduct] = useState({});
   const [isVisible, setIsVisible] = useState(true);
 
@@ -16,9 +17,10 @@ function CreateProductForm({ onAdd, onClose }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const newProduct = await createProduct(product);
+      const newProduct = await createProduct(product, authToken);
       onAdd(newProduct);
       setProduct({});
+      onClose();
     } catch (error) {
       console.error("Failed to add product:", error);
     }
@@ -74,12 +76,16 @@ function CreateProductForm({ onAdd, onClose }) {
           name="type"
           value={product.type || ""}
           onChange={handleChange}
+          required
         >
-          <option value="Burger">Burger</option>
-          <option value="Drink">Boisson</option>
-          <option value="Menu">Menu</option>
-          <option value="Accompagnement">Accompagnement</option>
-          <option value="IceCream">Glace</option>
+          <option value="" disabled>
+            Sélectionnez un type
+          </option>
+          <option value="Burgers">Burgers</option>
+          <option value="Boissons">Boissons</option>
+          <option value="Accompagnements">Accompagnements</option>
+          <option value="Sauces">Sauces</option>
+          <option value="Glaces">Glaces</option>
         </select>
         <div className="form-buttons">
           <button type="submit" className="button save-button">

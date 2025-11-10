@@ -8,7 +8,7 @@ function EditItem() {
   const [item, setItem] = useState(null);
   const navigate = useNavigate();
   const [error, setError] = useState("");
-  const authToken = localStorage.getItem("authToken");
+  const authToken = localStorage.getItem("userToken");
 
   useEffect(() => {
     const fetchItem = async () => {

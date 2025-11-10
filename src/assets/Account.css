@@ -3,6 +3,10 @@ body {
   padding: 0;
 }
 
+.page-subtitle {
+  color: brown;
+}
+
 .create-account-form {
   max-width: 500px;
   margin: 2rem auto;
@@ -19,9 +23,9 @@ body {
   max-width: 500px;
   margin: 2rem auto;
   padding: 2rem;
-  background: #fff;
+
   border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   margin-top: 0px;
   margin-bottom: 300px;
@@ -114,9 +118,22 @@ body {
 }
 
 .button-container {
-  text-align: right;
+  justify-content: space-evenly;
+  display: flex;
+  text-align: center;
 }
 
 .login-error {
   color: #d32f2f;
+}
+
+.forgot-password-link {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.forgot-password-link a {
+  color: var(--primary-color, #c62828);
+  text-decoration: underline;
+  font-weight: 600;
 }

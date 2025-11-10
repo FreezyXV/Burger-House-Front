@@ -26,7 +26,7 @@ header {
 
 .logotype {
   width: 70px;
-  transform: translateX(-140%);
+  transform: translateX(-110%);
 }
 
 .hamburger,
@@ -145,7 +145,7 @@ header {
 
   .logotype {
     top: 5%;
-    transform: translateX(0%);
+    transform: translateX(-5%);
   }
 
   .hamburger,

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "../../assets/Admin.css";
 import { createMenu } from "../../functions/frontFunctions";
 
-function CreateMenuForm({ onAdd, onClose }) {
+function CreateMenuForm({ onAdd, onClose, authToken }) {
   const [menu, setMenu] = useState({});
   const [isVisible, setIsVisible] = useState(true);
 
@@ -17,9 +17,10 @@ function CreateMenuForm({ onAdd, onClose }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const newMenu = await createMenu(menu);
+      const newMenu = await createMenu(menu, authToken);
       onAdd(newMenu);
       setMenu({});
+      onClose();
     } catch (error) {
       console.error("Failed to add menu:", error);
     }

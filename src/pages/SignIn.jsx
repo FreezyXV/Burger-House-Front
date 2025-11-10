@@ -1,9 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../assets/Account.css";
 
 // Composant qui permet à l'utilisateur de se connecter ou d'aller sur la page de création de compte
-function SignIn() {
+const API_HOST =
+  import.meta.env.DEV && import.meta.env.VITE_API_URL_LOCAL
+    ? import.meta.env.VITE_API_URL_LOCAL
+    : import.meta.env.VITE_API_URL || "http://localhost:2233";
+
+function SignIn({ onUserLogin }) {
   // Définir l'état initial pour les informations d'identification de l'utilisateur
   const [credentials, setCredentials] = useState({
     username: "",
@@ -47,14 +52,14 @@ function SignIn() {
     }
 
     try {
-      const response = await fetch(
-        `${import.meta.env.VITE_API_URL}/api/users/login`,
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ username, password }),
-        }
-      );
+      const response = await fetch(`${API_HOST}/api/users/login`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          ...(username.includes("@") ? { email: username } : { username }),
+          password,
+        }),
+      });
 
       if (!response.ok) {
         const errorData = await response.json();
@@ -65,6 +70,8 @@ function SignIn() {
 
       localStorage.setItem("userToken", token);
       localStorage.setItem("user", JSON.stringify(user));
+
+      onUserLogin?.(user);
 
       window.dispatchEvent(
         new CustomEvent("loginStateChanged", { detail: user })
@@ -112,6 +119,9 @@ function SignIn() {
           >
             Créez votre Compte
           </button>
+        </div>
+        <div className="forgot-password-link">
+          <Link to="/mot-de-passe-oublie">Mot de passe oublié ?</Link>
         </div>
       </form>
     </div>

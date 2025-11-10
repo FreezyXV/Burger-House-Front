@@ -57,6 +57,7 @@
 }
 
 .img-box {
+  text-align: center;
   flex-shrink: 0;
 }
 

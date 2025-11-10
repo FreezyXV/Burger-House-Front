@@ -21,10 +21,7 @@ function useFetchItems(categoryName) {
         if (categoryName === "Menu") {
           fetchedItems = await getAllMenus();
         } else {
-          const allProducts = await getAllItems();
-          fetchedItems = allProducts.filter(
-            (product) => product.type === categoryName
-          );
+          fetchedItems = await getAllItems(categoryName);
         }
         setItems(fetchedItems);
         console.log(fetchedItems);
