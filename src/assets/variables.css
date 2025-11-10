@@ -1,0 +1,104 @@
+/* CSS Variables - Design Tokens */
+
+:root {
+  /* Colors */
+  --color-primary: #f8ca1c;
+  --color-primary-hover: #ffd230;
+  --color-secondary: #ff9900;
+  --color-success: #4caf50;
+  --color-success-dark: rgb(0, 166, 0);
+  --color-success-darker: rgb(0, 203, 0);
+  --color-error: #f44336;
+  --color-danger: red;
+
+  --color-text-primary: #030303;
+  --color-text-secondary: #591f1f;
+  --color-text-accent: #8d2727;
+  --color-text-brown: brown;
+  --color-text-dark-brown: rgb(79, 29, 29);
+
+  --color-bg-primary: #faf5ed;
+  --color-bg-white: #fff;
+  --color-bg-blue: #0000B5;
+
+  --color-border: #e0e0e0;
+  --color-border-transparent: transparent;
+
+  /* Fonts */
+  --font-primary: "Montserrat", sans-serif;
+  --font-heading: "Bungee Inline", cursive;
+  --font-display: "Bungee Spice", sans-serif;
+  --font-accent: "Bungee", sans-serif;
+
+  /* Spacing */
+  --spacing-xs: 5px;
+  --spacing-sm: 8px;
+  --spacing-md: 10px;
+  --spacing-lg: 15px;
+  --spacing-xl: 20px;
+  --spacing-xxl: 25px;
+
+  /* Gaps */
+  --gap-xs: 10px;
+  --gap-sm: 12px;
+  --gap-md: 15px;
+  --gap-lg: 16px;
+  --gap-xl: 20px;
+
+  /* Border Radius */
+  --radius-sm: 8px;
+  --radius-md: 15px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --radius-circle: 50%;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.2);
+  --shadow-lg: 0px 6px 12px rgba(0, 0, 0, 0.1);
+  --shadow-success: 0 2px 4px rgba(0, 144, 0, 0.4);
+
+  /* Transitions */
+  --transition-fast: 400ms;
+  --transition-medium: 500ms;
+
+  /* Breakpoints (for reference in comments) */
+  /* Mobile: 480px */
+  /* Tablet: 768px */
+  /* Desktop small: 1024px */
+
+  /* Card Sizes */
+  --card-width-sm: 130px;
+  --card-width-md: 150px;
+  --card-width-lg: 160px;
+  --card-width-xl: 180px;
+  --card-width-xxl: 350px;
+
+  --card-height-sm: 130px;
+  --card-height-md: 150px;
+  --card-height-lg: 160px;
+  --card-height-xl: 180px;
+  --card-height-xxl: 350px;
+
+  /* Image Sizes */
+  --img-size-sm: 80px;
+  --img-size-md: 90px;
+  --img-size-lg: 100px;
+  --img-size-xl: 120px;
+  --img-size-xxl: 260px;
+
+  /* Font Sizes */
+  --font-size-xs: 11px;
+  --font-size-sm: 12px;
+  --font-size-md: 14px;
+  --font-size-lg: 16px;
+  --font-size-xl: 18px;
+  --font-size-xxl: 22px;
+  --font-size-xxxl: 24px;
+  --font-size-display-sm: 28px;
+  --font-size-display-md: 32px;
+  --font-size-display-lg: 34px;
+
+  /* Border Width */
+  --border-width: 3px;
+}

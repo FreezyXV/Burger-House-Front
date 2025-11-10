@@ -19,6 +19,7 @@ function Admin() {
   const navigate = useNavigate();
   const [showProductForm, setShowProductForm] = useState(false);
   const [showMenuForm, setShowMenuForm] = useState(false);
+  const authToken = localStorage.getItem("userToken");
 
   const closeProductForm = () => setShowProductForm(false);
   const closeMenuForm = () => setShowMenuForm(false);
@@ -51,7 +52,7 @@ function Admin() {
   const handleDelete = async (id, type) => {
     try {
       const deleteFunction = type === "product" ? deleteProduct : deleteMenu;
-      await deleteFunction(id);
+      await deleteFunction(id, authToken);
       if (type === "product") {
         setProducts((prevProducts) =>
           prevProducts.filter((product) => product._id !== id)
@@ -121,6 +122,7 @@ function Admin() {
                   closeProductForm();
                 }}
                 onClose={closeProductForm}
+                authToken={authToken}
               />
             </div>
           )}
@@ -163,6 +165,7 @@ function Admin() {
                   closeMenuForm();
                 }}
                 onClose={closeMenuForm}
+                authToken={authToken}
               />
             </div>
           )}

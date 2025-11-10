@@ -3,11 +3,12 @@ import { useParams } from "react-router-dom";
 import "../assets/produit.css";
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { getItemById } from "../functions/frontFunctions";
 
 
 // Ce composant permet d'afficher le Produit concerné et de l'envoyer vers le Panier
 function Produit({ addToCart }) {
-  const { type, productId } = useParams();
+  const { productId } = useParams();
   const [item, setItem] = useState(null);
   const [quantity, setQuantity] = useState(1);
   const [error, setError] = useState("");
@@ -19,7 +20,7 @@ function Produit({ addToCart }) {
   useEffect(() => {
     const fetchProductDetails = async () => {
       try {
-        const data = await getItemById(type, productId);
+        const data = await getItemById("Product", productId);
 
         if (!data || !data.title) {
           throw new Error("Product not found.");
@@ -40,27 +41,6 @@ function Produit({ addToCart }) {
       setIsLoading(false);
     }
   }, [productId]);
-
-  
-  async function getItemById(type, id) {
-    var response = null;
-  
-    if (type === "Menu") {
-      response = await fetch(`${import.meta.env.VITE_API_URL}/api/menus/${id}`);
-    } else {
-      response = await fetch(`${import.meta.env.VITE_API_URL}/api/products/${id}`);
-    }
-  
-    if (!response.ok) {
-      if (response.status === 404) {
-        return null;
-      }
-  
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-  
-    return response.json();
-  }
 
   // Fonction qui permet d'ajouter ou d'enlever la quantité du produit concerné
   const handleQuantityChange = (changeType) => {

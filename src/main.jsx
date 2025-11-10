@@ -18,8 +18,8 @@ import SuccessPage from "./pages/successPage.jsx";
 import Account from "./pages/Account.jsx";
 import CreateMenu from "./pages/admin/CreateMenuForm.jsx";
 import CreateProduct from "./pages/admin/CreateProductForm.jsx";
-import Footer from "./components/Footer.jsx";
-import Navbar from "./components/Navbar.jsx";
+import ForgotPassword from "./pages/ForgotPassword.jsx";
+import ResetPassword from "./pages/ResetPassword.jsx";
 import "./assets/App.css";
 import "./assets/navbar.css";
 
@@ -115,13 +115,7 @@ const AppRouter = () => {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: (
-        <App
-          user={user}
-          onUserLogin={handleUserLogin}
-          onUserLogout={handleUserLogout}
-        />
-      ),
+      element: <App clearCart={clearCart} />,
       children: [
         { path: "/", element: <Homepage />, index: true },
         { path: "carte", element: <Carte /> },
@@ -134,6 +128,8 @@ const AppRouter = () => {
           path: "connexion",
           element: <SignIn onUserLogin={handleUserLogin} />,
         },
+        { path: "mot-de-passe-oublie", element: <ForgotPassword /> },
+        { path: "reinitialiser-mot-de-passe", element: <ResetPassword /> },
         { path: "admin/edit/:type/:itemId", element: <EditItem /> },
         { path: "create-menu", element: <CreateMenu /> },
         { path: "create-product", element: <CreateProduct /> },
@@ -154,7 +150,6 @@ const AppRouter = () => {
           path: "commande",
           element: (
             <CartAndOrderSummary
-              user={user}
               cartItems={cartItems}
               clearCart={clearCart}
               onSuccess={() => console.log("Order Successful")}
@@ -171,10 +166,7 @@ const AppRouter = () => {
 
   return (
     <React.StrictMode>
-      <RouterProvider router={router}>
-        <Navbar clearCart={clearCart} onUserLogout={handleUserLogout} />
-        <Footer />
-      </RouterProvider>
+      <RouterProvider router={router} />
     </React.StrictMode>
   );
 };

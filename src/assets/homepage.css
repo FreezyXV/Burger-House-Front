@@ -1,7 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Montserrat:wght@500&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Bungee&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Bungee+Inline&family=Montserrat:wght@500&display=swap");
-
 /* General styles for the homepage */
 
 
@@ -182,7 +178,7 @@ html, body {
   gap: 3rem;
   margin-top: 3rem;
   flex-wrap: wrap;
-  width: 60%;
+
 }
 
 .quick-links-homepage-TextBlock {
@@ -252,7 +248,7 @@ html, body {
 /* Shortcut styling */
 .Shorcut {
   background: white;
-  max-width: 380px;
+  max-width: 310px;
   border-radius: 24px;
   text-align: center;
   padding: 2.5rem 2rem;
@@ -287,7 +283,7 @@ html, body {
   font-size: 1.3rem;
   font-weight: 600;
   color: #2C1810;
-  margin-top: 1rem;
+  margin-top: 28px;
   background-color: transparent;
 }
 /* Styling for the section */
@@ -677,19 +673,20 @@ h1.homepage4-title {
 
   .homepage-cards {
     flex-direction: column;
-    gap: 2rem;
+    gap: 1rem;
     margin-top: 2rem;
-    margin-right: 2rem;
+
   }
 
   .Shorcut {
-    width: 100%;
-    max-width: 400px;
+
+    max-width: 310px;
+    height: 300px;
     padding: 2rem 1.5rem;
   }
 
   .menuName {
-    font-size: 1.2rem;
+    font-size: 28rem;
   }
 
   .store-locator {
@@ -871,23 +868,19 @@ h1.homepage4-title {
     line-height: 1.5;
   }
 
-  .homepage-cards {
-    margin-right: 2rem;
-    gap: 1.5rem;
-    margin-top: 1.5rem;
-  }
+
 
   .Shorcut {
-    max-width: 100%;
+
     padding: 1.5rem 1rem;
   }
 
   .menuName {
-    font-size: 1.1rem;
+    font-size: 24px;
   }
 
   .img {
-    width: 60%;
+    width: 80%;
   }
 
   .store-locator {
